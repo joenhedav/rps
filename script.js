@@ -48,21 +48,18 @@ function playRound(
   }
 }
 
-
 function playGame() {
   let result;
-  for (let i=1; i<=5; i++) {
+  for (let i = 1; i <= 5; i++) {
     console.log("Ronda n° " + i);
     result = playRound();
     console.log(result);
   }
   if (humanScore === computerScore) {
-    console.log(`¡El juego terminó en empate! ${humanScore}:${computerScore}`)
-  } else if (computerScore < humanScore){ 
-    console.log(`¡Ganaste el juego! ${humanScore}:${computerScore}`)
+    console.log(`¡El juego terminó en empate! ${humanScore}:${computerScore}`);
+  } else if (computerScore < humanScore) {
+    console.log(`¡Ganaste el juego! ${humanScore}:${computerScore}`);
   } else {
-    console.log(`¡Perdiste el juego! ${humanScore}:${computerScore}`)
+    console.log(`¡Perdiste el juego! ${humanScore}:${computerScore}`);
   }
 }
-
-playGame();

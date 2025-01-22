@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(68, 94, 221);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  gap: 48px;
+}
+
+button {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  background-color: rgb(75, 214, 75);
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(60, 171, 60); 
+}
