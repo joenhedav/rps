@@ -1,2 +1,2 @@
 # rps
-Proyeto del jeugo piedra, papel o tijeras
+Proyecto juego piedra papel tijeras
