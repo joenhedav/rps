@@ -32,6 +32,11 @@ button {
   display: flex;
 }
 
+.final-result {
+  font-size: 40px;
+  justify-content: center;
+}
+
 .score {
   gap: 48px;
   justify-content: center;
