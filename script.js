@@ -13,6 +13,13 @@ function getComputerChoice() {
   }
 }
 
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    playRound(button.id);
+  });
+});
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -47,16 +54,14 @@ function playRound(humanChoice) {
     } else {
       finalResult.textContent = "¡Perdiste la partida!";
     }
+
+    buttons.forEach((button) => {
+      button.disabled = true;
+    });
+
     setTimeout(reset, 3000);
   }
 }
-
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    playRound(button.id);
-  });
-});
 
 function reset() {
   humanScore = 0;
@@ -65,4 +70,8 @@ function reset() {
   document.querySelector("#computer-score").textContent = computerScore;
   document.querySelector(".result").textContent = "";
   document.querySelector(".final-result").textContent = "";
+
+  buttons.forEach((button) => {
+    button.disabled = false;
+  });
 }
