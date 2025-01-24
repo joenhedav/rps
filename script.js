@@ -13,53 +13,35 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let choice = prompt(
-    "Elige una opcion (piedra, papel, tijeras) ",
-  ).toLowerCase();
-
-  if (choice !== "piedra" && choice !== "papel" && choice !== "tijeras") {
-    alert("Opción invalida, intente nuevamente");
-    return getHumanChoice();
-  } else {
-    return choice;
-  }
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(
-  humanChoice = getHumanChoice(),
-  computerChoice = getComputerChoice(),
-) {
+function playRound(humanChoice) {
+  let computerChoice = getComputerChoice();
+  const results = document.querySelector('.result');
+  const playerScores = document.querySelector('#player-score');
+  const computerScores = document.querySelector('#computer-score');
+  
   if (
     (humanChoice === "piedra" && computerChoice === "tijeras") ||
     (humanChoice === "tijeras" && computerChoice === "papel") ||
     (humanChoice === "papel" && computerChoice === "piedra")
   ) {
     humanScore++;
-    return "¡Ganaste! " + humanChoice + " le gana a " + computerChoice;
+    playerScores.textContent = humanScore;
+    results.textContent = "¡Ganaste! " + humanChoice + " le gana a " + computerChoice;
   } else if (humanChoice === computerChoice) {
-    return "¡Empate!";
+    results.textContent = "¡Empate!";
   } else {
     computerScore++;
-    return "¡Perdiste! " + computerChoice + " le gana a " + humanChoice;
+    computerScores.textContent = computerScore;
+    results.textContent = "¡Perdiste " + computerChoice + " le gana a " + humanChoice;
   }
 }
 
-function playGame() {
-  let result;
-  for (let i = 1; i <= 5; i++) {
-    console.log("Ronda n° " + i);
-    result = playRound();
-    console.log(result);
-  }
-  if (humanScore === computerScore) {
-    console.log(`¡El juego terminó en empate! ${humanScore}:${computerScore}`);
-  } else if (computerScore < humanScore) {
-    console.log(`¡Ganaste el juego! ${humanScore}:${computerScore}`);
-  } else {
-    console.log(`¡Perdiste el juego! ${humanScore}:${computerScore}`);
-  }
-}
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    playRound(button.id);
+  }) 
+})

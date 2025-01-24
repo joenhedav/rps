@@ -2,30 +2,37 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(68, 94, 221);
-  height: 100vh;
+  background-color: #888;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.choices {
-  display: flex;
-  justify-content: center;
-  padding: 8px;
-  gap: 48px;
+.container {
+  width: 45%;
+  text-align: center;
 }
 
 button {
-  font-size: 20px;
-  font-weight: 800;
-  color: white;
-  background-color: rgb(75, 214, 75);
+  background-color: transparent;
   border: none;
-  padding: 16px;
+  font-size: 80px;
+  font-weight: 800;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: rgb(60, 171, 60); 
+.result {
+  justify-content: center;
+  margin-top: 32px;
+}
+.score,
+.result {
+  font-size: 40px;
+  display: flex;
+}
+
+.score {
+  gap: 48px;
+  justify-content: center;
 }

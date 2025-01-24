@@ -7,11 +7,18 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
-    <div class="choices">
-      <button id="piedra">PIEDRA</button>
-      <button id="papel">PAPEL</button>
-      <button id="tijeras">TIJERAS</button>
+  <body> 
+    <div class="container">
+      <div class="choices">
+        <button id="piedra">&#9994;</button>
+        <button id="papel">&#128400;</button>
+        <button id="tijeras">&#9996</button>
+      </div>
+      <div class="result"></div>
+      <div class="score">
+        <p>Jugador: <span id="player-score">0</span></p> 
+        <p>Computadora: <span id="computer-score">0</span></p>
+      </div>
     </div>
   </body>
 </html>
